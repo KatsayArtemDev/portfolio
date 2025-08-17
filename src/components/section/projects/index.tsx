@@ -23,7 +23,6 @@ export default function Projects() {
           <div
             key={index}
             className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-300 hover:scale-105 hover:border-white/20 cursor-pointer"
-            onClick={() => window.open(project.github, "_blank")}
           >
             <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
             <p className="text-gray-300 mb-4">{project.description}</p>
