@@ -16,12 +16,12 @@ export default function Skills() {
             { icon: "nextjs", name: "Next.js", badge: "Fullstack" },
             { icon: "tailwind", name: "Tailwind", badge: "Frontend" },
             { icon: "nodejs", name: "Node.js", badge: "Backend" },
-            { icon: "git", name: "Git", badge: "VCS" },
             { icon: "linux", name: "Linux", badge: "DevOps" },
             { icon: "docker", name: "Docker", badge: "DevOps" },
             { icon: "postgresql", name: "PostgreSQL", badge: "Database" },
             { icon: "oracle", name: "Oracle", badge: "Database" },
             { icon: "redis", name: "Redis", badge: "Database" },
+            { icon: "git", name: "Git", badge: "VCS" },
           ].map((skill, index) => (
             <div
               key={index}
