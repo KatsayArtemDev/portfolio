@@ -9,7 +9,7 @@ const PARAGRAPHS = [
 export default function About() {
   return (
     <section id="about">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
         <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-6">
           <Tag title="#About Me" />
           {PARAGRAPHS.map((paragraph, i) => (

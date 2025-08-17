@@ -7,7 +7,7 @@ export default function Studing() {
         <div className="text-center md:text-start">
           <Tag title="#Studing" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
           <div className="w-full space-y-6 liquid-glass p-6 md:p-10 h-full">
             <h3 className="text-3xl font-bold">Yandex Practicum</h3>
             <p className="text-gray-300 md:text-lg">
