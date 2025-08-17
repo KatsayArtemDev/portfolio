@@ -1,6 +1,10 @@
+import { cn } from "@/lib/utils";
+
 interface Props {
   title: string;
 }
+
+const GRADIENT = "bg-gradient-to-r from-purple-500 to-cyan-500";
 
 export default function Tag(props: Props) {
   const hashTag = props.title.split(" ")[0].toLowerCase();
@@ -10,10 +14,20 @@ export default function Tag(props: Props) {
       href={hashTag}
       className="group text-5xl font-bold text-center relative pb-5"
     >
-      <span className="text-white group-hover:text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 transition-all duration-300">
+      <span
+        className={cn(
+          "group-hover:text-transparent bg-clip-text transition-all duration-300",
+          GRADIENT
+        )}
+      >
         {props.title}
       </span>
-      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 rounded transition-all duration-500 w-full"></span>
+      <span
+        className={cn(
+          "absolute bottom-0 left-1/2 -translate-x-1/2 h-1 rounded w-full",
+          GRADIENT
+        )}
+      ></span>
     </a>
   );
 }

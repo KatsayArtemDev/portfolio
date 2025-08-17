@@ -101,9 +101,37 @@
       linear-gradient(135deg, rgba(11, 8, 25, 1) 0%, rgba(20, 10, 40, 0.9) 100%);
   }
   section {
-    @apply mx-auto p-4 md:p-12 min-h-screen flex items-center justify-center;
+    @apply mx-auto p-4 md:p-12 min-h-screen h-screen flex items-center justify-center;
   }
   .liquid-glass {
-    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl;
+    @apply bg-white/5 border border-white/10 rounded-2xl;
+  }
+  .dot {
+    @apply w-4 h-4 rounded-full absolute -translate-x-1/2 left-px;
+    background: #00e7ff;
+    box-shadow: 0 0 15px 5px rgba(0, 231, 255, 0.7);
+  }
+  .dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 15px 10px rgba(0, 221, 255, 0.5);
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.8;
+    }
+    70% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1.8);
+      opacity: 0;
+    }
   }
 }

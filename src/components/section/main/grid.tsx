@@ -1,9 +1,9 @@
 export default function Grid() {
   return (
     <div
-      className="absolute h-full opacity-80 animate-pulse"
+      className="absolute h-full animate-pulse"
       style={{
-        maskImage: "linear-gradient(to bottom, black 70%, transparent 100%)",
+        maskImage: "linear-gradient(to bottom, black 60%, transparent 100%)",
       }}
     >
       <svg
