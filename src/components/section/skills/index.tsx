@@ -1,36 +1,39 @@
+import Tag from "@/components/common/tag";
+import { Badge } from "@/components/ui/badge";
+
 export default function Skills() {
-  <section className="container mx-auto p-4 md:p-12 min-h-screen flex flex-col items-center justify-center text-center">
-    <h2 className="text-4xl md:text-6xl font-bold mb-12">My Skills</h2>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
-      {[
-        "Node.js",
-        "React",
-        "TypeScript",
-        "Golang",
-        "PostgreSQL",
-        "Oracle",
-        "Linux",
-        "Docker",
-        "Git",
-      ].map((skill, index) => (
-        <div
-          key={index}
-          className="p-6 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 transition-all duration-300 hover:scale-105 hover:border-white/20"
-        >
-          <h3 className="text-xl md:text-2xl font-semibold">{skill}</h3>
+  return (
+    <section id="tech">
+      <div className="flex flex-col w-full gap-16">
+        <div className="text-center md:text-start">
+          <Tag title="#Tech Stack & My Skills" />
         </div>
-      ))}
-    </div>
-    <div className="mt-12 text-center text-md md:text-lg text-gray-300 max-w-3xl">
-      <p>
-        I am a fullstack developer with extensive experience in creating
-        large-scale web applications and Telegram bots. I have a solid command
-        of Linux, Docker, and Git. I quickly grasp new tasks, am open to
-        learning new technologies, know how to plan, and pay attention to code
-        quality. I am fluent in English, which is confirmed by certificates. I
-        am currently actively studying Data Science in a Yandex Praktikum course
-        and plan to deepen my expertise in this field.
-      </p>
-    </div>
-  </section>;
+        <div className="skills-grid grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+          {[
+            { icon: "python", name: "Python", badge: "Data Science" },
+            { icon: "go", name: "Golang", badge: "Backend" },
+            { icon: "typescript", name: "TypeScript", badge: "Fullstack" },
+            { icon: "nextjs", name: "Next.js", badge: "Fullstack" },
+            { icon: "tailwind", name: "Tailwind", badge: "Frontend" },
+            { icon: "nodejs", name: "Node.js", badge: "Backend" },
+            { icon: "git", name: "Git", badge: "VCS" },
+            { icon: "linux", name: "Linux", badge: "DevOps" },
+            { icon: "docker", name: "Docker", badge: "DevOps" },
+            { icon: "postgresql", name: "PostgreSQL", badge: "Database" },
+            { icon: "oracle", name: "Oracle", badge: "Database" },
+            { icon: "redis", name: "Redis", badge: "Database" },
+          ].map((skill, index) => (
+            <div
+              key={index}
+              className="liquid-glass p-6 flex flex-col items-center gap-2 transition-all duration-300 hover:-translate-y-2 fade-in"
+            >
+              <img src={`/icons/${skill.icon}.svg`} className="w-16 h-16" />
+              <div className="text-lg font-semibold">{skill.name}</div>
+              <Badge variant="secondary">{skill.badge}</Badge>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

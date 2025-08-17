@@ -21,19 +21,19 @@ const TIMELINE_DATA = [
 export default function Experience() {
   return (
     <section id="experience">
-      <div className="flex flex-col w-full h-full gap-16">
+      <div className="flex flex-col w-full gap-16">
         <div className="text-center md:text-start">
           <Tag title="#Experience" />
         </div>
-        <div className="liquid-glass p-6 md:p-12 h-full flex flex-col">
+        <div className="liquid-glass p-6 md:p-12 flex flex-col">
           <h2 className="text-3xl font-bold mb-8">
             The Fullstack Developer&apos;s Path
           </h2>
 
-          <div className="h-full grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="h-full relative flex">
-              <div className="w-0.5 h-full bg-gradient-to-b from-cyan-400 rounded-full animate-pulse mr-10"></div>
-              <div className="flex flex-col justify-between w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="relative flex">
+              <div className="w-0.5 bg-gradient-to-b from-cyan-400 rounded-full animate-pulse mr-10"></div>
+              <div className="flex flex-col gap-12 justify-between w-full">
                 {TIMELINE_DATA.map((item, i) => (
                   <div
                     key={i}
