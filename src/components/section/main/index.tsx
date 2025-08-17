@@ -6,7 +6,7 @@ import Grid from "./grid";
 
 export default function Main() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center p-4 md:p-8">
+    <section>
       <Grid />
 
       <div className="relative z-10 space-y-6 md:space-y-8 text-center">
