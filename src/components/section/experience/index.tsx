@@ -30,7 +30,7 @@ export default function Experience() {
             The Fullstack Developer&apos;s Path
           </h2>
 
-          <div className="group/item h-full grid grid-cols-1 md:grid-cols-2 items-center">
+          <div className="h-full grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="h-full relative flex">
               <div className="w-0.5 h-full bg-gradient-to-b from-cyan-400 rounded-full animate-pulse mr-10"></div>
               <div className="flex flex-col justify-between w-full">
