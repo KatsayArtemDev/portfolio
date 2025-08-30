@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 interface Props {
   title: string;
@@ -10,13 +11,13 @@ export default function Tag(props: Props) {
   const hashTag = props.title.split(" ")[0].toLowerCase();
 
   return (
-    <a
+    <Link
       href={hashTag}
       className="group text-5xl font-bold text-center relative pb-5"
     >
       <span
         className={cn(
-          "group-hover:text-transparent bg-clip-text transition-all duration-300",
+          "external-link no-underline group-hover:text-transparent",
           GRADIENT
         )}
       >
@@ -28,6 +29,6 @@ export default function Tag(props: Props) {
           GRADIENT
         )}
       ></span>
-    </a>
+    </Link>
   );
 }

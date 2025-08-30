@@ -1,4 +1,5 @@
 import Tag from "@/components/common/tag";
+import Link from "next/link";
 
 export default function Studing() {
   return (
@@ -13,28 +14,28 @@ export default function Studing() {
             <p className="text-gray-300 md:text-lg">
               I am learning to become a Data Science specialist and now study in
               the&nbsp;
-              <a
+              <Link
                 href="https://practicum.yandex.ru/data-scientist"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="external-link"
               >
                 Advanced Data Science program at Yandex Practicum
-              </a>
+              </Link>
               . During the course, I finished the SQL and PostgreSQL module and
               successfully completed the final project.
             </p>
             <p className="text-gray-300 md:text-lg">
               In addition to my studies, I also practice in my free time. I
               solve tasks on LeetCode and follow the steps from the&nbsp;
-              <a
+              <Link
                 href="https://roadmap.sh/ai-data-scientist"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="external-link"
               >
                 AI & Data Scientist roadmap
-              </a>
+              </Link>
               .
             </p>
             <p className="text-gray-300 md:text-lg">

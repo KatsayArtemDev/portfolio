@@ -1,5 +1,61 @@
 import Tag from "@/components/common/tag";
 import { Badge } from "@/components/ui/badge";
+import { Github } from "lucide-react";
+import Link from "next/link";
+
+const PROJECTS_DATA = [
+  {
+    title: "Goods Monitoring",
+    instruments: [
+      { name: "Typescript", isSec: true },
+      { name: "PostgreSQL", isSec: true },
+      { name: "Grammy.js" },
+      { name: "Playwright" },
+      { name: "Pino" },
+    ],
+    description:
+      "A powerful Telegram bot built with TypeScript that keeps track of goods, prices, and availability in real time. It automatically parses data from your chosen sources, stores it in PostgreSQL, and alerts you when better deals are found — including the ability to search for cheaper prices by category (e.g., books, tools, electronics).",
+    link: "https://github.com/KatsayArtemDev/goods-monitoring",
+  },
+  {
+    title: "Verification",
+    instruments: [
+      { name: "Golang", isSec: true },
+      { name: "PostgreSQL", isSec: true },
+      { name: "HTML", isSec: true },
+      { name: "Gomail" },
+      { name: "Zap" },
+    ],
+    description:
+      "Verification is a Golang project focused on implementing identity or transaction verification workflows. It offers modular components for HTTP endpoints, persistent storage, and verification logic, making it easy to build secure services such as 2FA, email/SMS verification, or token-based access validation.",
+    link: "https://github.com/KatsayArtemDev/verification",
+  },
+  {
+    title: "Trend Hunter",
+    instruments: [
+      { name: "Golang", isSec: true },
+      { name: "Docker", isSec: true },
+      { name: "go-talib" },
+      { name: "invest-api-go-sdk" },
+      { name: "Zap" },
+    ],
+    description:
+      "A pragmatic, container-ready trading bot written in Go. Trend Hunter provides a solid foundation for building and running trend-following or momentum-based strategies with a simple operational model (local Go binary or Docker/Compose).",
+    link: "https://github.com/KatsayArtemDev/trend-hunter",
+  },
+  {
+    title: "Portfolio",
+    instruments: [
+      { name: "Typescript", isSec: true },
+      { name: "Next.js", isSec: true },
+      { name: "Tailwind" },
+      { name: "Shadcn" },
+    ],
+    description:
+      "A pragmatic, container-ready trading bot written in Go. Trend Hunter provides a solid foundation for building and running trend-following or momentum-based strategies with a simple operational model (local Go binary or Docker/Compose).",
+    link: "https://github.com/KatsayArtemDev/portfolio",
+  },
+];
 
 export default function Projects() {
   return (
@@ -9,26 +65,41 @@ export default function Projects() {
           <Tag title="#Projects" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
-          {[0, 1, 2, 4].map((el, i) => (
-            <div key={i} className="liquid-glass p-4 space-y-4">
-              <h3 className="text-2xl font-bold">Goods Monitoring</h3>
-              <div className="flex gap-2">
-                <Badge variant="secondary">Typescript</Badge>
-                <Badge variant="secondary">Postgresql</Badge>
-                <Badge variant="outline">Grammy.js</Badge>
-                <Badge variant="outline">Playwright</Badge>
-                <Badge variant="outline">Pino</Badge>
+          {PROJECTS_DATA.map((project, pi) => (
+            <div
+              key={pi}
+              className="relative liquid-glass p-4 space-y-4 flex flex-col justify-between overflow-hidden"
+            >
+              <h3 className="text-2xl font-bold">{project.title}</h3>
+              <div className="flex flex-wrap gap-2">
+                {project.instruments.map((instrument, ii) => (
+                  <Badge
+                    key={ii}
+                    variant={instrument.isSec ? "secondary" : "outline"}
+                  >
+                    {instrument.name}
+                  </Badge>
+                ))}
               </div>
-              <h5>
-                A powerful Telegram bot built with TypeScript that keeps track
-                of goods, prices, and availability in real time. It
-                automatically parses data from your chosen sources, stores it in
-                PostgreSQL...
+              <h5 className="line-clamp-4 text-base/7 text-gray-300">
+                {project.description}
               </h5>
-              <div className="flex">
-                <button>Read more</button>
-                <button>Open Source</button>
+              <div className="flex justify-between gap-4">
+                <button className="liquid-glass w-full py-2 px-4 border rounded-md liquid-button">
+                  Read more
+                </button>
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  className="flex items-center justify-center underline w-full py-2 px-4 gap-2 external-link"
+                >
+                  Open Source
+                </Link>
               </div>
+              <Github
+                className="absolute w-100 h-100 -z-10 -right-50 -top-5 -rotate-12 opacity-10"
+                color="grey"
+              />
             </div>
           ))}
         </div>
