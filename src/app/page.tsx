@@ -9,7 +9,7 @@ import Study from "@/components/section/studing";
 
 export default function () {
   return (
-    <>
+    <div className="w-full md:max-w-6xl">
       <Main />
       <About />
       <Experience />
@@ -18,6 +18,6 @@ export default function () {
       <Projects />
       <Contacts />
       <Footer />
-    </>
+    </div>
   );
 }

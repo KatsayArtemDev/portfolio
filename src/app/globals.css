@@ -83,7 +83,7 @@
     @apply border-border outline-ring/50 text-white;
   }
   body {
-    @apply min-h-screen overflow-x-hidden w-full md:max-w-6xl mx-auto;
+    @apply overflow-x-hidden flex flex-col items-center;
     background: radial-gradient(
         circle at 15% 20%,
         rgba(124, 58, 237, 0.1) 0%,
@@ -102,7 +102,7 @@
       linear-gradient(135deg, rgba(11, 8, 25, 1) 0%, rgba(20, 10, 40, 0.9) 100%);
   }
   section {
-    @apply mx-auto p-4 md:p-12 min-h-screen flex items-center justify-center;
+    @apply p-4 md:p-12 min-h-screen flex items-center justify-center;
   }
   .external-link {
     @apply underline hover:text-transparent bg-clip-text transition-all duration-300 bg-gradient-to-r from-purple-500 to-cyan-500;

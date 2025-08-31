@@ -1,7 +1,7 @@
 "use client";
 
-import Typewriter from "typewriter-effect";
 import { ChevronsDown } from "lucide-react";
+import Typewriter from "typewriter-effect";
 import Grid from "./grid";
 
 export default function Main() {

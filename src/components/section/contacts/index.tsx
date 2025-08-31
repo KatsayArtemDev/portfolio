@@ -30,13 +30,13 @@ export default function Contacts() {
               target="_blank"
             >
               <img
-                src={`/icons/hh.png`}
+                src="/icons/hh.png"
                 className="w-14 h-14 hover:scale-110 duration-100"
               />
             </Link>
             <Link href="https://t.me/katsay_artem" target="_blank">
               <img
-                src={`/icons/tg.svg`}
+                src="/icons/tg.svg"
                 className="w-14 h-14 hover:scale-110 duration-100"
               />
             </Link>
