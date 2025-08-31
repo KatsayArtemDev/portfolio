@@ -67,7 +67,7 @@ const PROJECTS_DATA: ProjectData[] = [
       { name: "Shadcn" },
     ],
     description:
-      "A pragmatic, container-ready trading bot written in Go. Trend Hunter provides a solid foundation for building and running trend-following or momentum-based strategies with a simple operational model (local Go binary or Docker/Compose).",
+      "A portfolio website showcasing my skills, projects, and professional experience as a software developer. It serves as an overview of my technical skills, intended to give potential employers a full picture of my experience.",
     link: "https://github.com/KatsayArtemDev/portfolio",
   },
 ];
