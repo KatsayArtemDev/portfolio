@@ -18,7 +18,7 @@ export default function Contacts() {
             <a
               href="/Кацай Артём.pdf"
               download
-              className="liquid-glass liquid-button flex justify-center gap-3 font-bold p-6 rounded-full"
+              className="liquid-glass liquid-button flex justify-center items-center gap-3 font-bold p-6 rounded-full"
             >
               <Download /> Download My Resume (PDF)
             </a>
