@@ -20,7 +20,7 @@ export default function About() {
         </div>
         <div className="max-w-md mx-auto">
           <div className="liquid-glass">
-            <div className="backdrop-blur-md p-4 transition-transform duration-300 hover:scale-105">
+            <div className="backdrop-blur-md rounded-2xl p-4 transition-transform duration-300 hover:scale-105">
               <img
                 src="/photo.png"
                 alt="Profile Photo"
