@@ -3,7 +3,14 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
 
-const TIMELINE_DATA = [
+interface TimelineData {
+  tab: string;
+  title: string;
+  subtitle: string;
+  opacity: string;
+}
+
+const TIMELINE_DATA: TimelineData[] = [
   {
     tab: "lead",
     title: "Lead Developer",
@@ -24,7 +31,16 @@ const TIMELINE_DATA = [
   },
 ];
 
-const CONTENT_DATA = [
+interface ContentData {
+  tab: string;
+  tasks: {
+    name: string;
+    isPlan?: boolean;
+    badges: string[];
+  }[];
+}
+
+const CONTENT_DATA: ContentData[] = [
   {
     tab: "lead",
     tasks: [
@@ -185,14 +201,16 @@ export default function Experience() {
             <div className="w-full liquid-glass p-3 h-96 overflow-y-auto">
               {CONTENT_DATA.map((content) => (
                 <TabsContent key={content.tab} value={content.tab}>
-                  {content.tasks.map(({ name, badges, isPlan }, ti) => (
+                  {content.tasks.map((task, ti) => (
                     <div key={ti} className="liquid-glass p-3 space-y-3 mb-3">
                       <div className="flex items-start gap-2">
-                        <h2 className="text-xl">{name}</h2>
-                        {isPlan && <Badge variant="secondary">Planning</Badge>}
+                        <h2 className="text-xl">{task.name}</h2>
+                        {task.isPlan && (
+                          <Badge variant="secondary">Planning</Badge>
+                        )}
                       </div>
                       <div className="flex flex-wrap gap-2">
-                        {badges.map((badge, bi) => (
+                        {task.badges.map((badge, bi) => (
                           <Badge key={bi}>{badge}</Badge>
                         ))}
                       </div>

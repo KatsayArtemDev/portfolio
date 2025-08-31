@@ -7,18 +7,15 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import Link from "next/link";
+import { ProjectData } from ".";
 
 interface Props {
-  title: string;
-  createdAt: string;
-  description: string;
-  instruments: { name: string; isSec?: boolean }[];
-  link: string;
-  videoSrc?: string;
+  project: ProjectData;
 }
 
 export default function ReadMore(props: Props) {
-  const { title, createdAt, description, instruments, link, videoSrc } = props;
+  const { title, createdAt, description, instruments, link, videoSrc } =
+    props.project;
 
   return (
     <Dialog>

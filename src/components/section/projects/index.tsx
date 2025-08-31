@@ -4,7 +4,16 @@ import { Github } from "lucide-react";
 import Link from "next/link";
 import ReadMore from "./read-more";
 
-const PROJECTS_DATA = [
+export interface ProjectData {
+  title: string;
+  createdAt: string;
+  instruments: { name: string; isSec?: boolean }[];
+  description: string;
+  link: string;
+  videoSrc?: string;
+}
+
+const PROJECTS_DATA: ProjectData[] = [
   {
     title: "Goods Monitoring",
     createdAt: "June 2024",
@@ -71,53 +80,41 @@ export default function Projects() {
           <Tag title="#Projects" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
-          {PROJECTS_DATA.map(
-            (
-              { title, createdAt, instruments, description, link, videoSrc },
-              pi
-            ) => (
-              <div
-                key={pi}
-                className="relative liquid-glass p-4 space-y-4 flex flex-col justify-between overflow-hidden"
-              >
-                <h3 className="text-2xl font-bold">{title}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {instruments.map((instrument, ii) => (
-                    <Badge
-                      key={ii}
-                      variant={instrument.isSec ? "secondary" : "outline"}
-                    >
-                      {instrument.name}
-                    </Badge>
-                  ))}
-                </div>
-                <h5 className="line-clamp-4 text-base/7 text-gray-300">
-                  {description}
-                </h5>
-                <div className="flex justify-between gap-4">
-                  <ReadMore
-                    title={title}
-                    createdAt={createdAt}
-                    description={description}
-                    instruments={instruments}
-                    link={link}
-                    videoSrc={videoSrc}
-                  />
-                  <Link
-                    href={link}
-                    target="_blank"
-                    className="flex items-center justify-center underline w-full py-2 px-4 gap-2 external-link"
+          {PROJECTS_DATA.map((project, pi) => (
+            <div
+              key={pi}
+              className="relative liquid-glass p-4 space-y-4 flex flex-col justify-between overflow-hidden"
+            >
+              <h3 className="text-2xl font-bold">{project.title}</h3>
+              <div className="flex flex-wrap gap-2">
+                {project.instruments.map((instrument, ii) => (
+                  <Badge
+                    key={ii}
+                    variant={instrument.isSec ? "secondary" : "outline"}
                   >
-                    Open Source
-                  </Link>
-                </div>
-                <Github
-                  className="absolute w-100 h-100 -z-10 -right-50 -top-5 -rotate-12 opacity-10"
-                  color="grey"
-                />
+                    {instrument.name}
+                  </Badge>
+                ))}
               </div>
-            )
-          )}
+              <h5 className="line-clamp-4 text-base/7 text-gray-300">
+                {project.description}
+              </h5>
+              <div className="flex justify-between gap-4">
+                <ReadMore project={project} />
+                <Link
+                  href={project.link}
+                  target="_blank"
+                  className="flex items-center justify-center underline w-full py-2 px-4 gap-2 external-link"
+                >
+                  Open Source
+                </Link>
+              </div>
+              <Github
+                className="absolute w-100 h-100 -z-10 -right-50 -top-5 -rotate-12 opacity-10"
+                color="grey"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

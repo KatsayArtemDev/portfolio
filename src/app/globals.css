@@ -80,7 +80,7 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50 text-white;
+    @apply border-border outline-ring/50 text-white scroll-smooth;
   }
   body {
     @apply overflow-x-hidden flex flex-col items-center;

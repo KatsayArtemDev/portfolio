@@ -1,6 +1,6 @@
 import Tag from "@/components/common/tag";
 
-const PARAGRAPHS = [
+const PARAGRAPHS: string[] = [
   "I got into programming early on and started my career at 16 as a Fullstack Developer Intern in FRANK RG tech team. Now, at 18, I am a lead developer.",
   "Graduated from school with a gold medal. Passed exams with 270 points and entered Moscow State University MIREA. Faculty of Artificial Intelligence Technologies and Data Science. The program is implemented with the support of Yandex.",
   "My biggest achievement at the company was independently creating a full-time software solution for analysts, built with all the features of Next.js 15, with a codebase (SLOC) of about 10,000 lines.",
