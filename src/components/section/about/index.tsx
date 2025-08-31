@@ -18,14 +18,15 @@ export default function About() {
             </p>
           ))}
         </div>
-        <div className="relative w-full max-w-md mx-auto">
-          <div className="absolute rounded-2xl inset-0 liquid-glass" />
-          <div className="backdrop-blur-md p-4 transition-transform duration-500 hover:scale-105">
-            <img
-              src="/photo.png"
-              alt="Profile Photo"
-              className="w-full h-auto rounded-2xl object-cover saturate-150"
-            />
+        <div className="max-w-md mx-auto">
+          <div className="liquid-glass">
+            <div className="backdrop-blur-md p-4 transition-transform duration-300 hover:scale-105">
+              <img
+                src="/photo.png"
+                alt="Profile Photo"
+                className="w-full h-auto rounded-2xl object-cover saturate-150 "
+              />
+            </div>
           </div>
         </div>
       </div>
